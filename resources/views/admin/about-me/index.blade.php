@@ -19,7 +19,59 @@
                         {{ method_field('put') }} -->
                         <div class="form-group form-float">
                             <div class="form-line">
+                                <input type="text" name="name" class="form-control" form="willSubmit" value="{{ $myAbout->name }}">
+                                <label class="form-label">Nama</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" name="email" class="form-control" form="willSubmit" value="{{ $myAbout->email }}">
+                                <label class="form-label">Email</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" name="address" class="form-control" form="willSubmit" value="{{ $myAbout->address }}">
+                                <label class="form-label">Address</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
                                 <textarea name="description" class="my-editor" form="willSubmit" rows="20">{{ $myAbout->description }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" name="study" class="form-control" form="willSubmit" value="{{ $myAbout->study }}">
+                                <label class="form-label">Study</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" name="university" class="form-control" form="willSubmit" value="{{ $myAbout->university }}">
+                                <label class="form-label">University</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" name="hp" class="form-control" form="willSubmit" value="{{ $myAbout->hp }}">
+                                <label class="form-label">Handphone</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                @if(isset($myAbout->photo_profile))
+                                    <br>
+                                    <img class="img-responsive" style="max-width: 30vw; max-height: 30vh;" src="{{ url('mybio/'.$myAbout->photo_profile) }}">
+                                @endif
+                                <input type="file" name="photo_profile" class="form-control" form="willSubmit">
                             </div>
                         </div>
 
@@ -32,32 +84,44 @@
                 <div class="header">
               		<form action="{{ url('admin/about-me') }}" id="willSubmit" method="POST" enctype="multipart/form-data">
               			{{ csrf_field() }}
-                    	{{ method_field('put') }}
-                    	<p>Fokus Programming</p>
+                    {{ method_field('put') }}
+                    <p>Fokus Programming</p>
 	              		<div class="form-group form-float">	
 	              			<div class="form-line">
-	              				<input type="text" name="focus1" class="form-control" value="{{ $myAbout->focus1 }}">
-	              				<label class="form-label">Fokus 1</label>
+	              				<input type="text" name="line" class="form-control" value="{{ $myAbout->line }}">
+	              				<label class="form-label">Line</label>
 	              			</div>
 	              		</div>
 	              		<div class="form-group form-float">	
 	              			<div class="form-line">
-	              				<input type="text" name="focus2" class="form-control" value="{{ $myAbout->focus2 }}">
-	              				<label class="form-label">Fokus 2</label>
+	              				<input type="text" name="ig" class="form-control" value="{{ $myAbout->ig }}">
+	              				<label class="form-label">Instagram</label>
 	              			</div>
 	              		</div>
 	              		<div class="form-group form-float">	
 	              			<div class="form-line">
-	              				<input type="text" name="focus3" class="form-control" value="{{ $myAbout->focus3 }}">
-	              				<label class="form-label">Fokus 3</label>
+	              				<input type="text" name="fb" class="form-control" value="{{ $myAbout->fb }}">
+	              				<label class="form-label">Facebook</label>
 	              			</div>
 	              		</div>
 	              		<div class="form-group form-float">	
 	              			<div class="form-line">
-	              				<input type="text" name="focus4" class="form-control" value="{{ $myAbout->focus4 }}">
-	              				<label class="form-label">Fokus 4</label>
+	              				<input type="text" name="twitter" class="form-control" value="{{ $myAbout->twitter }}">
+	              				<label class="form-label">Twitter</label>
 	              			</div>
 	              		</div>
+                    <div class="form-group form-float"> 
+                      <div class="form-line">
+                        <input type="text" name="yt" class="form-control" value="{{ $myAbout->yt }}">
+                        <label class="form-label">Youtube</label>
+                      </div>
+                    </div>
+                    <div class="form-group form-float"> 
+                      <div class="form-line">
+                        <input type="text" name="wa" class="form-control" value="{{ $myAbout->wa }}">
+                        <label class="form-label">Whatsapp</label>
+                      </div>
+                    </div>
                     
 	                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>
               		</form>

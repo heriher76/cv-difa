@@ -13,6 +13,12 @@
 
 Route::get('/', 'PagesController@index');
 
+Route::get('/calculator', 'PagesController@calc');
+
+Route::get('/about', 'PagesController@about');
+
+Route::post('/send-message', 'MessageController@store');
+
 Auth::routes();
 
 // Group Auth middleware
@@ -25,12 +31,10 @@ Route::group(["middleware" => "auth", "prefix" => "admin"], function(){
 	Route::get('/about-me', 'Admin\AboutMeController@index');
 	Route::put('/about-me', 'Admin\AboutMeController@update');
 
-	Route::get('/quotes', 'Admin\QuotesController@index');
-	Route::put('/quotes', 'Admin\QuotesController@update');
-
-	Route::resource('/experience', 'Admin\ExperienceController');
-
-	Route::resource('/education', 'Admin\EducationController');
+	Route::get('/messages', 'MessageController@index');
+	Route::delete('/messages/{id}', 'MessageController@destroy');
 
 	Route::resource('/gallery', 'Admin\GalleryController');
+
+	Route::resource('/slider', 'Admin\SliderController');
 });

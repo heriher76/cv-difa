@@ -31,14 +31,8 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('admin/my-profile') }}">
-                    <i class="material-icons">face</i>
-                    <span>My Profile</span>
-                </a>
-            </li>
-            <li>
                 <a href="{{ url('admin/about-me') }}">
-                    <i class="material-icons">description</i>
+                    <i class="material-icons">face</i>
                     <span>About Me</span>
                 </a>
             </li>
@@ -49,21 +43,15 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('admin/experience') }}">
+                <a href="{{ url('admin/slider') }}">
                     <i class="material-icons">description</i>
-                    <span>Experience</span>
+                    <span>Slider</span>
                 </a>
             </li>
             <li>
-                <a href="{{ url('admin/education') }}">
+                <a href="{{ url('admin/messages') }}">
                     <i class="material-icons">description</i>
-                    <span>Education</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('admin/quotes') }}">
-                    <i class="material-icons">description</i>
-                    <span>Quotes</span>
+                    <span>Messages</span>
                 </a>
             </li>
         </ul>

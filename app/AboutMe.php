@@ -8,5 +8,6 @@ class AboutMe extends Model
 {
     protected $table = 'aboutme';
 
-    protected $fillable = ['description', 'focus1', 'focus2', 'focus3', 'focus4'];
+    protected $fillable = ['description', 'name', 'email', 'address', 'study', 'university', 'hp', 'line', 'ig', 'fb', 'twitter', 'yt', 'wa', 'photo_profile'];
+    
 }

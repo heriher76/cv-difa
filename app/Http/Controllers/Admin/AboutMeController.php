@@ -76,24 +76,51 @@ class AboutMeController extends Controller
 
         if(AboutMe::first() == null) {
             
+            (isset($input['photo_profile'])) ? $namaProfile = str_random().'.'.$input['photo_profile']->getClientOriginalExtension() : $namaProfile = null;
+
             AboutMe::create([
                 'description' => $input['description'],
-                'focus1' => $input['focus1'],
-                'focus2' => $input['focus2'],
-                'focus3' => $input['focus3'],
-                'focus4' => $input['focus4']
+                'name' => $input['name'],
+                'email' => $input['email'],
+                'address' => $input['address'],
+                'study' => $input['study'],
+                'university' => $input['university'],
+                'hp' => $input['hp'],
+                'line' => $input['line'],
+                'ig' => $input['ig'],
+                'fb' => $input['fb'],
+                'twitter' => $input['twitter'],
+                'yt' => $input['yt'],
+                'wa' => $input['wa'],
+                'photo_profile' => $namaProfile
             ]);
+
+            (isset($input['photo_profile'])) ? $input['photo_profile']->move(public_path('mybio'), $namaProfile) : null;
 
         }else{
             $myAbout = AboutMe::first();
 
+            (isset($input['photo_profile'])) ? $namaProfile = str_random().'.'.$input['photo_profile']->getClientOriginalExtension() : $namaProfile = null;
+
             $myAbout->update([
                 'description' => $input['description'],
-                'focus1' => $input['focus1'],
-                'focus2' => $input['focus2'],
-                'focus3' => $input['focus3'],
-                'focus4' => $input['focus4']
+                'name' => $input['name'],
+                'email' => $input['email'],
+                'address' => $input['address'],
+                'study' => $input['study'],
+                'university' => $input['university'],
+                'hp' => $input['hp'],
+                'line' => $input['line'],
+                'ig' => $input['ig'],
+                'fb' => $input['fb'],
+                'twitter' => $input['twitter'],
+                'yt' => $input['yt'],
+                'wa' => $input['wa'],
+                'photo_profile' => $namaProfile
             ]);
+
+
+            (isset($input['photo_profile'])) ? $input['photo_profile']->move(public_path('mybio'), $namaProfile) : null;
         }
         return redirect('admin');
     }
